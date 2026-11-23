@@ -1,0 +1,24 @@
+{
+  "name": "barber-booking-agent",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Barbershop booking agent with Gemini function calling (personal demo, fictional data)",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "agent": "tsx --env-file=.env src/cli.ts",
+    "typecheck": "tsc --noEmit",
+    "try:booking": "tsx scripts/try-booking.ts"
+  },
+  "dependencies": {
+    "@google/genai": "^3.6.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3"
+  }
+}
