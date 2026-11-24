@@ -10,7 +10,8 @@
   "scripts": {
     "agent": "tsx --env-file=.env src/cli.ts",
     "typecheck": "tsc --noEmit",
-    "try:booking": "tsx scripts/try-booking.ts"
+    "try:booking": "tsx scripts/try-booking.ts",
+    "try:tools": "tsx scripts/try-tools.ts"
   },
   "dependencies": {
     "@google/genai": "^3.6.1",
