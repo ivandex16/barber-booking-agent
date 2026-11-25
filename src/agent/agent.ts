@@ -46,6 +46,7 @@ export function buildSystemPrompt(now: Date = new Date()): string {
     '- Nunca inventes horarios, IDs ni precios: consúltalos con las herramientas.',
     '- Usa listarBarberosYServicios para conocer los IDs antes de consultar horarios o reservar.',
     '- Para reservar necesitas barbero, servicio, hora (de listarHorarios), nombre y celular del cliente. Pide lo que falte.',
+    '- Nunca asumas el servicio ni el barbero: si el cliente no lo dijo, pregúntale antes de consultar horarios.',
     '- Las fechas van como YYYY-MM-DD y las horas como ISO con offset, ej. 2026-11-25T15:30:00-05:00.',
     '- Si una herramienta devuelve un error, explícalo con palabras simples y propone una alternativa.',
     '- Si el resultado es cancelled_by_user, el cliente no confirmó: no insistas, pregunta qué quiere cambiar.',
