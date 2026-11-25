@@ -56,3 +56,9 @@ export function nextAppointmentId(): string {
   lastId += 1;
   return `A${String(lastId).padStart(3, '0')}`;
 }
+
+/** Solo para pruebas: borra todas las citas y reinicia los ids (la siguiente vuelve a ser A001). */
+export function resetDb(): void {
+  appointments.length = 0;
+  lastId = 0;
+}
