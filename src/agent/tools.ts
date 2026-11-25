@@ -23,6 +23,10 @@ const BarberId = z
   .enum(["carlos", "andres", "luis"])
   .describe("Id del barbero , ej. carlos");
 
+const ServiceId = z
+  .enum(["corte", "barba", "corte-barba"])
+  .describe("Id del servicio: corte, barba o corte-barba, ej. corte");
+
 const ClientPhone = z
   .string()
   .regex(/^3\d{9}$/)
@@ -34,14 +38,14 @@ export const ListarBarberosYServiciosArgs = z.object({}); // TODO(ivan): ¿hace 
 // barberId, serviceId, date ('YYYY-MM-DD').
 export const ListarHorariosArgs = z.object({
   barberId: BarberId,
-  serviceId: z.string(),
+  serviceId: ServiceId,
   date: z.iso.date().describe("Fecha en formato YYYY-MM-DD, ej. 2026-11-25"),
 }); // TODO(ivan)
 
 // barberId, serviceId, start (ISO con offset, ej. 2026-11-24T15:30:00-05:00), clientName, clientPhone (3 + 9 dígitos).
 export const ReservarCitaArgs = z.object({
   barberId: BarberId,
-  serviceId: z.string(),
+  serviceId: ServiceId,
   start: z.iso.datetime({ offset: true }),
   clientName: z.string().min(2),
   clientPhone: ClientPhone,
